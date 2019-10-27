@@ -5,9 +5,8 @@ This module contains the implementation of the Anaconda Game.
 """
 
 from __future__ import annotations
-from grid import Grid
 from typing import Any, List, Optional, Tuple
-from linked_list import LinkedList, _Node
+import linked_list
 import pygame
 
 
@@ -16,12 +15,6 @@ class Anaconda:
     Implementation of the Anaconda Game.
     """
 
-    # === Private Attributes ===
-    # _snake: A LinkedList representation of the snake
-    # _grid: The grid of game
-    _snake = None
-    _grid = None
-
     def __init__(self) -> None:
         """Initialize a new Anaconda Game.
         """
@@ -29,9 +22,9 @@ class Anaconda:
 
     def make_grid(self) -> None:
         """
-        Makes a 16X16 Grid (model).
+        Makes a 16X16 Grid on Pygame.
         """
-        self._grid = Grid()
+        raise NotImplementedError
 
     def make_food(self) -> None:
         """
@@ -43,16 +36,7 @@ class Anaconda:
         """
         Makes the body of the Anaconda.
         """
-        initial_snake_body = []
-        for col in range(4):
-            initial_snake_body.append(_Node((8, col)))
-        self._snake = LinkedList(initial_snake_body)
-
-    def get_snake(self) -> LinkedList:
-        """
-        Returns the snake in the form of a LinkedList
-        """
-        return self._snake
+        raise NotImplementedError
 
     def stage_gui(self) -> None:
         """
@@ -95,3 +79,7 @@ class Anaconda:
         Restart the game when the game is over.
         """
         raise NotImplementedError
+
+
+
+
