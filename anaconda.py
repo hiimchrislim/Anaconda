@@ -25,7 +25,9 @@ class Anaconda:
     def __init__(self) -> None:
         """Initialize a new Anaconda Game.
         """
-        raise NotImplementedError
+        self.current_score = 0
+        self.make_grid()
+        self.make_snake()
 
     def make_grid(self) -> None:
         """
@@ -36,9 +38,10 @@ class Anaconda:
     def make_food(self) -> None:
         """
         Makes food to eat for the Anaconda.
+        The number 2 will represent food.
         """
-        raise NotImplementedError
-
+        return 2 
+        
     def make_snake(self) -> None:
         """
         Makes the body of the Anaconda.
@@ -82,7 +85,7 @@ class Anaconda:
         """
         Grows the body of the snake by 1 unit when food is eaten.
         """
-        raise NotImplementedError
+        self.current_score += 1
 
     def display_stats(self) -> None:
         """
