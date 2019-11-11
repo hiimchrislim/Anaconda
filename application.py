@@ -6,7 +6,7 @@ This module is responsible for displaying the UI of the game and running the
 overall anaconda game.
 """
 
-from __future__ import annotations
+#from __future__ import annotations
 from typing import Tuple
 import pygame
 
@@ -39,7 +39,10 @@ class Application:
         """
         pygame.init()
         self.window_size = (640, 480)
+        self.screen = pygame.display.set_mode([500, 500])
         self.clock = pygame.time.Clock()
+        self.running = True
+        self.play()
         # TODO: Implement this method
 
     def show_title_screen(self) -> None:
@@ -60,3 +63,21 @@ class Application:
         Main GUI Application Loop. Runs the game.
         """
         # TODO: Implement this method
+        while self.running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.running = False
+            
+            # Fill the background with black
+            self.screen.fill((0, 0, 0))
+            # draw grid
+
+
+            # Flip the display
+            pygame.display.flip()
+        pygame.quit()
+
+
+
+if __name__ == "__main__":
+    game = Application()
