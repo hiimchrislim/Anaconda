@@ -11,8 +11,8 @@ import pygame
 import Snake
 import linked_list
 
-BODY_HEAD = pygame.Rect((132, 363, 32, 32))
-BODY_PART = pygame.Rect((100, 363, 32, 32))
+# BODY_HEAD = pygame.Rect((132, 363, 32, 32))
+# BODY_PART = pygame.Rect((100, 363, 32, 32))
 
 
 class Application:
@@ -69,7 +69,7 @@ class Application:
         self.green = (126, 200, 80)
         self.red = (255, 0, 0)
         self.brown = (181, 101, 29)
-        self.snake_body = linked_list.LinkedList([BODY_HEAD])
+        # self.snake_body = linked_list.LinkedList([BODY_HEAD])
 
         self.show_title_screen()
 
@@ -229,17 +229,15 @@ class Application:
 
             # Move the snake
             # TODO: The snake should move within the grid lines
-            # self.snake_head.x += self.snake.get_snake_direction()[0]
-            # self.snake_head.y += self.snake.get_snake_direction()[1]
 
-            for i in range(len(self.snake_body)):
-                self.snake_body[i].x += self.snake.get_snake_direction()[0]
-                self.snake_body[i].y += self.snake.get_snake_direction()[1]
+            for i in range(len(self.snake.snake_body)):
+                self.snake.snake_body[i].x += self.snake.get_snake_direction()[0]
+                self.snake.snake_body[i].y += self.snake.get_snake_direction()[1]
 
-            for j in range(len(self.snake_body)):
-                pygame.draw.rect(self.screen, self.green, self.snake_body[j])
+            for j in range(len(self.snake.snake_body)):
+                pygame.draw.rect(self.screen, self.green, self.snake.snake_body[j])
 
-            # # Limit to 60 frames per second
+            # Limit to 60 frames per second
             self.clock.tick(60)
 
             # Go ahead and update the screen with what we've drawn.
