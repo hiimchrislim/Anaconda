@@ -24,4 +24,4 @@ class Snake:
         pass
 
     def get_snake_direction(self) -> Tuple[int, int]:
-        return (self.dx, self.dy)
+        return self.dx, self.dy

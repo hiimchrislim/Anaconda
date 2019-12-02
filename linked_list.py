@@ -81,3 +81,30 @@ class LinkedList:
             else:
                 # Update to insert new node
                 curr.next, new_node.next = new_node, curr.next
+
+    def __getitem__(self, index: int) -> Any:
+        """Return the item at position index in this list.
+
+        Raise IndexError if index is >= the length of this list.
+        """
+        curr = self._first
+        curr_index = 0
+
+        while curr is not None and curr_index < index:
+            curr = curr.next
+            curr_index += 1
+
+        if curr is None:
+            raise IndexError
+        else:
+            return curr.item
+
+    def __len__(self) -> int:
+        """Return the number of elements in this list.
+        """
+        curr = self._first
+        count = 0
+        while curr is not None:
+            count += 1
+            curr = curr.next
+        return count
