@@ -19,11 +19,22 @@ class _Node:
     item: Any
     next: Optional[_Node]
 
-    def __init__(self, item: Any) -> None:
+    def __init__(self, item: Any, isHead) -> None:
         """Initialize a new node with <item>, with no next node.
         """
         self.item = item
         self.next = None  # Initially pointing to nothing
+        self.isHead = isHead
+
+
+    def isHead(self) -> bool:
+        return self.isHead
+
+    def getItem(self):
+        return self.item
+
+    def insert_item(self, item):
+        self.item = item
 
 
 class LinkedList:
@@ -41,11 +52,11 @@ class LinkedList:
         if items == []:
             self._first = None
         else:
-            self._first = _Node(items[0])
+            self._first = _Node(items[0], True)
             if len(items) > 1:
                 curr = self._first
                 for i in items[1:len(items)]:
-                    curr.next = _Node(i)
+                    curr.next = _Node(i, False)
                     curr = curr.next
 
     def is_empty(self) -> bool:

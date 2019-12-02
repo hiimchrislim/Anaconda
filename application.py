@@ -10,6 +10,11 @@ from typing import Tuple
 import pygame
 import Snake
 from random import randint
+import linked_list
+from grid import Grid
+
+# BODY_HEAD = pygame.Rect((132, 363, 32, 32))
+# BODY_PART = pygame.Rect((100, 363, 32, 32))
 
 
 class Application:
@@ -40,6 +45,7 @@ class Application:
     grid_width: int
     grid_height: int
     margin: int
+    snake_body: linked_list.LinkedList
 
     def __init__(self) -> None:
         """
@@ -57,8 +63,10 @@ class Application:
         self.screen = pygame.display.set_mode(self.window_size)
         self.clock = pygame.time.Clock()
 
-        self.grid = [[0 for x in range(16)] for y in range(16)]
-        self.snake = Snake.Snake()
+        self.grid = Grid(16)
+        self.grid.draw_original_snake()
+
+        # self.snake = Snake.Snake()
 
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
@@ -66,6 +74,7 @@ class Application:
         self.red = (255, 0, 0)
         self.brown = (181, 101, 29)
         self.place_food()
+
         self.show_title_screen()
 
     def show_title_screen(self) -> None:
@@ -156,13 +165,12 @@ class Application:
         This method draws the visual grid on the screen
         """
         # Draw grid
-
+        print(self.grid.get_grid())
         for row in range(1, 17):
             for column in range(1, 17):
                 color = self.white
-                if self.grid[row - 1][column - 1] == 1:
+                if type(self.grid.get_item(row-1, column-1)) == linked_list._Node:
                     color = self.green
-
                 rect = pygame.Rect(column * (self.grid_height + self.margin)-1,
                                    row * (self.grid_width + self.margin),
                                    self.grid_height, self.grid_width)
@@ -182,6 +190,7 @@ class Application:
 
         # -------- Main Program Loop -----------
         while not game_over:
+            # game_over = self.grid.is_game_over() # Fix this
             for event in pygame.event.get():  # User did something
                 if event.type == pygame.QUIT:  # If user clicked close
                     pygame.quit()
@@ -207,7 +216,7 @@ class Application:
 
             # Set the screen background
             self.screen.fill(self.green)
-
+            self.grid.update_snake()
             self.draw_grid()
             self.screen.blit(label, (0, 1))
 
@@ -220,16 +229,16 @@ class Application:
 
             # Move the snake
             # TODO: The snake should move within the grid lines
-
-            for i in range(len(self.snake.snake_body)):
-                self.snake.snake_body[i].x += self.snake.get_snake_direction()[0]
-                self.snake.snake_body[i].y += self.snake.get_snake_direction()[1]
-
-            for j in range(len(self.snake.snake_body)):
-                pygame.draw.rect(self.screen, self.green, self.snake.snake_body[j])
+            #
+            # for i in range(len(self.snake.snake_body)):
+            #     self.snake.snake_body[i].x += self.snake.get_snake_direction()[0]
+            #     self.snake.snake_body[i].y += self.snake.get_snake_direction()[1]
+            #
+            # for j in range(len(self.snake.snake_body)):
+            #     pygame.draw.rect(self.screen, self.green, self.snake.snake_body[j])
 
             # Limit to 60 frames per second
-            self.clock.tick(60)
+            self.clock.tick(2)
 
             # Go ahead and update the screen with what we've drawn.
             pygame.display.flip()
