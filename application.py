@@ -9,10 +9,7 @@ overall anaconda game.
 from typing import Tuple
 import pygame
 import Snake
-import linked_list
-
-# BODY_HEAD = pygame.Rect((132, 363, 32, 32))
-# BODY_PART = pygame.Rect((100, 363, 32, 32))
+from random import randint
 
 
 class Application:
@@ -43,7 +40,6 @@ class Application:
     grid_width: int
     grid_height: int
     margin: int
-    snake_body: linked_list.LinkedList
 
     def __init__(self) -> None:
         """
@@ -69,8 +65,7 @@ class Application:
         self.green = (126, 200, 80)
         self.red = (255, 0, 0)
         self.brown = (181, 101, 29)
-        # self.snake_body = linked_list.LinkedList([BODY_HEAD])
-
+        self.place_food()
         self.show_title_screen()
 
     def show_title_screen(self) -> None:
@@ -161,16 +156,12 @@ class Application:
         This method draws the visual grid on the screen
         """
         # Draw grid
-        self.grid[1][5] = 2
 
         for row in range(1, 17):
             for column in range(1, 17):
                 color = self.white
                 if self.grid[row - 1][column - 1] == 1:
                     color = self.green
-
-                elif self.grid[row-1][column-1] == 2:
-                    color = self.red
 
                 rect = pygame.Rect(column * (self.grid_height + self.margin)-1,
                                    row * (self.grid_width + self.margin),
@@ -245,6 +236,18 @@ class Application:
 
         pygame.quit()
 
+    def place_food(self) -> None:
+        """
+        Place food randomly on the grid, not on the snke
+        """
+        row = randint(1, 16)
+        col = randint(1, 16)
+        while(): # Need to update according to grid
+            color = self.red
+            rect = pygame.Rect(col * (self.grid_height + self.margin) - 1,
+                               row * (self.grid_width + self.margin),
+                               self.grid_height, self.grid_width)
+            pygame.draw.rect(self.screen, color, rect)
 
 # This main method is currently here to test out the GUI.
 # It can be removed once we finish anaconda.py
