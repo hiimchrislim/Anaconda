@@ -11,6 +11,7 @@ import pygame
 import Snake
 from random import randint
 import linked_list
+#from linked_list import LinkedList
 from grid import Grid
 
 # BODY_HEAD = pygame.Rect((132, 363, 32, 32))
@@ -66,7 +67,7 @@ class Application:
         self.grid = Grid(16)
         self.grid.draw_original_snake()
 
-        # self.snake = Snake.Snake()
+        #self.snake = Snake.Snake() #??
 
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
@@ -208,7 +209,7 @@ class Application:
                     game_over = True
 
                 if event.type == pygame.KEYUP:
-                    self.snake.move_snake(event)
+                    self.grid.move_snake(event)
 
             # Set the screen background
             self.screen.fill(self.green)

@@ -106,3 +106,6 @@ class Grid:
         self.clear_grid()
         print(len(self.snake.get_snake_linked_list()))
         self.draw_new_snake()
+
+    def move_snake(self, event):
+        self.snake.move_snake(event)

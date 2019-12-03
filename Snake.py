@@ -34,9 +34,28 @@ class Snake:
         return self.snake_linked_list
 
     def move_snake(self, event):
+        if event.key == pygame.K_w:
+            print("w key")
+            self.dx = 0
+            self.dy = -1
+        elif event.key == pygame.K_a:
+            print("a key")
+            self.dx = -1
+            self.dy = 0
+        elif event.key == pygame.K_s:
+            print("s key")
+            self.dx = 0
+            self.dy = 1
+        elif event.key == pygame.K_d:
+            print("d key")
+            self.dx = 1
+            self.dy = 0
+        else:
+            self.dx = 1
+            self.dy = 0
+        #self.update()
         # Changing the dx/dy of the snake
         # TODO: Implement
-        pass
 
     def update(self):
         curr = self.snake_linked_list._first
