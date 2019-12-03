@@ -254,7 +254,14 @@ class Application:
             self.screen.fill(self.green)
             self.grid.update_snake()
             self.draw_grid()
+
+            # temp soln
+            label = render.render("Score: " + str(self.score), 1, self.white)
             self.screen.blit(label, (0, 1))
+
+            # update game score
+            self.update_score()
+            
 
             # Draw the borders of the grid
             # The borders are not hardcoded, meaning you can move outside.
@@ -342,6 +349,23 @@ class Application:
         pygame.draw.rect(self.screen, color, rect)
         return row, col
 
+    def update_score(self):
+        """
+        Update the score when the snake eats food
+        """
+
+        if self.food == self.get_snakehead_pos():
+            self.score += 1
+ 
+            
+    
+    def get_snakehead_pos(self) -> Tuple[int, int]:
+        """
+        Return the x,y coordinates of the head of the snake
+        """
+        # ASK WHY y position of _first item is off 
+        fixed_coord = (self.grid.snake.get_snake_linked_list()._first.item[0],self.grid.snake.get_snake_linked_list()._first.item[1]+1)
+        return fixed_coord
 
 # This main method is currently here to test out the GUI.
 # It can be removed once we finish anaconda.py
