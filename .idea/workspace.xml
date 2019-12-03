@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd99d39a-e898-4bce-bf12-94116a34a6c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Anaconda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Anaconda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
@@ -167,22 +165,22 @@
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
     <state x="2045" y="-389" key="#application/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575343952139" />
-    <state width="1899" height="344" key="GridCell.Tab.0.bottom" timestamp="1575346994153">
+    <state width="1899" height="344" key="GridCell.Tab.0.bottom" timestamp="1575349814785">
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
-    <state width="1899" height="344" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575346994153" />
-    <state width="1899" height="344" key="GridCell.Tab.0.center" timestamp="1575346994153">
+    <state width="1899" height="344" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575349814785" />
+    <state width="1899" height="344" key="GridCell.Tab.0.center" timestamp="1575349814784">
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
-    <state width="1899" height="344" key="GridCell.Tab.0.center/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575346994153" />
-    <state width="1899" height="344" key="GridCell.Tab.0.left" timestamp="1575346994153">
+    <state width="1899" height="344" key="GridCell.Tab.0.center/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575349814784" />
+    <state width="1899" height="344" key="GridCell.Tab.0.left" timestamp="1575349814784">
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
-    <state width="1899" height="344" key="GridCell.Tab.0.left/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575346994153" />
-    <state width="1899" height="344" key="GridCell.Tab.0.right" timestamp="1575346994153">
+    <state width="1899" height="344" key="GridCell.Tab.0.left/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575349814784" />
+    <state width="1899" height="344" key="GridCell.Tab.0.right" timestamp="1575349814785">
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
-    <state width="1899" height="344" key="GridCell.Tab.0.right/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575346994153" />
+    <state width="1899" height="344" key="GridCell.Tab.0.right/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575349814785" />
     <state x="1827" y="-361" key="SettingsEditor" timestamp="1575343989562">
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
@@ -191,5 +189,9 @@
       <screen x="1366" y="-523" width="1920" height="1040" />
     </state>
     <state x="2021" y="-180" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575343867965" />
+    <state x="1989" y="-298" width="672" height="678" key="search.everywhere.popup" timestamp="1575347173911">
+      <screen x="1366" y="-523" width="1920" height="1040" />
+    </state>
+    <state x="1989" y="-298" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.-523.1920.1040@1366.-523.1920.1040" timestamp="1575347173911" />
   </component>
 </project>

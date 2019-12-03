@@ -8,7 +8,6 @@ from typing import List, Optional, Any
 from linked_list import _Node, LinkedList
 from Snake import Snake
 
-
 class Grid:
     """
     === Public Attributes ===
@@ -92,7 +91,8 @@ class Grid:
         self._grid = self._make_fresh_grid(16)
 
     def draw_new_snake(self):
-        self.snake = Snake(self.snake.get_snake_linked_list())
+        (dx, dy) = self.snake.get_snake_direction()
+        self.snake = Snake(self.snake.get_snake_linked_list(), dx, dy)
 
         curr = self.snake.get_snake_linked_list()._first
         while curr is not None:
@@ -104,7 +104,7 @@ class Grid:
     def update_snake(self):
         self.snake.update()
         self.clear_grid()
-        print(len(self.snake.get_snake_linked_list()))
+        #print(len(self.snake.get_snake_linked_list()))
         self.draw_new_snake()
 
     def move_snake(self, event):

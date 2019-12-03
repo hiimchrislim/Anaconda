@@ -5,19 +5,14 @@ The Anaconda: A Game
 This module is responsible for displaying the UI of the game and running the
 overall anaconda game.
 """
-
 from typing import Tuple
 import pygame
-import Snake
 from random import randint
 import linked_list
-#from linked_list import LinkedList
 from grid import Grid
-
 
 # BODY_HEAD = pygame.Rect((132, 363, 32, 32))
 # BODY_PART = pygame.Rect((100, 363, 32, 32))
-
 
 class Application:
     """
@@ -68,8 +63,6 @@ class Application:
         self.grid = Grid(16)
         self.grid.draw_original_snake()
 
-        #self.snake = Snake.Snake() #??
-
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
         self.green = (126, 200, 80)
@@ -83,9 +76,7 @@ class Application:
         Display the title screen of the game. The title screen should show the
         name of the game and its rules.
         """
-
         intro = True
-
         while intro:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -149,9 +140,7 @@ class Application:
         """
         Display the rules of the game to the user
         """
-
         show_rules = True
-
         while show_rules:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -215,7 +204,7 @@ class Application:
         This method draws the visual grid on the screen
         """
         # Draw grid
-        print(self.grid.get_grid())
+        #print(self.grid.get_grid())
         for row in range(1, 17):
             for column in range(1, 17):
                 color = self.white
@@ -285,7 +274,6 @@ class Application:
             #
             # for j in range(len(self.snake.snake_body)):
             #     pygame.draw.rect(self.screen, self.green, self.snake.snake_body[j])
-
             # Limit to 60 frames per second
             self.clock.tick(2)
 
@@ -359,7 +347,6 @@ class Application:
 
 # This main method is currently here to test out the GUI.
 # It can be removed once we finish anaconda.py
-
 
 if __name__ == "__main__":
     app = Application()

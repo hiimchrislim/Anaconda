@@ -15,15 +15,14 @@ import linked_list
 # BODY_HEAD = pygame.Rect((132, 363, 32, 32))
 # BODY_PART = pygame.Rect((100, 363, 32, 32))
 
-
 class Snake:
-    def __init__(self, snake_linked_list):
+    def __init__(self, snake_linked_list, dx=0, dy=0):
         # Load in snake head sprite
         # Load in snake tail sprites
         self.snake_linked_list = snake_linked_list
         # self.snake_body = linked_list.LinkedList([BODY_HEAD])
-        self.dx = 1  # snake moves as soon as game starts
-        self.dy = 0
+        self.dx = dx  # snake moves as soon as game starts
+        self.dy = dy
         # (dx > 0) = Moves right (index increases)
         # (dx < 0) = Moves left (index decreases)
         # (dy > 0) = Moves down the canvas (index increases)
@@ -35,27 +34,29 @@ class Snake:
 
     def move_snake(self, event):
         if event.key == pygame.K_w:
-            print("w key")
+            #print("w key")
             self.dx = 0
             self.dy = -1
         elif event.key == pygame.K_a:
-            print("a key")
+            #print("a key")
             self.dx = -1
             self.dy = 0
         elif event.key == pygame.K_s:
-            print("s key")
+            #print("s key")
             self.dx = 0
             self.dy = 1
         elif event.key == pygame.K_d:
-            print("d key")
+            #print("d key")
             self.dx = 1
             self.dy = 0
         else:
-            self.dx = 1
-            self.dy = 0
-        #self.update()
+            pass
+            # (x, y) = self.get_snake_direction()
+            # self.dx = x
+            # self.dy = y
+        self.update()
         # Changing the dx/dy of the snake
-        # TODO: Implement
+
 
     def update(self):
         curr = self.snake_linked_list._first
@@ -70,9 +71,6 @@ class Snake:
             curr.insert_item(previous_coordinate)
             previous_coordinate = old_coord
             curr = curr.next
-
-
-
 
     def get_snake_direction(self) -> Tuple[int, int]:
         return self.dx, self.dy
