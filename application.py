@@ -13,6 +13,7 @@ from random import randint
 import linked_list
 from grid import Grid
 
+
 # BODY_HEAD = pygame.Rect((132, 363, 32, 32))
 # BODY_PART = pygame.Rect((100, 363, 32, 32))
 
@@ -97,43 +98,34 @@ class Application:
             title = render.render("Anaconda ", 1, self.white)
 
             # Write title text on screen
-            self.screen.blit(title, (self.window_size[0]//5.6, self.window_size
-            [1]//5))
+            self.screen.blit(title,
+                             (self.window_size[0] // 5.6, self.window_size
+                             [1] // 5))
 
             mouse_pos = pygame.mouse.get_pos()
-
-            # Draw play button on screen
-            pygame.draw.rect(self.screen, self.green, (self.window_size[0]//5.5,
-                                                     self.window_size[1]//1.5,
-                                                     85, 50))
 
             # Create and draw play text on screen
             render = pygame.font.Font('freesansbold.ttf', 40)
             play_text = render.render("Play", 1, self.white)
 
-            self.screen.blit(play_text, (self.window_size[0]//5.5,
-                                         self.window_size[1]//1.5))
-
-            # Create and draw rules button on screen
-            pygame.draw.rect(self.screen, self.green, (self.window_size[0]//1.6,
-                                                       self.window_size[1]//1.5,
-                                                       115, 50))
+            self.screen.blit(play_text, (self.window_size[0] // 5.5,
+                                         self.window_size[1] // 1.5))
 
             # Create and draw rules text on screen
             rules_text = render.render("Rules", 1, self.white)
-            self.screen.blit(rules_text, (self.window_size[0]//1.6,
-                                          self.window_size[1]//1.5))
+            self.screen.blit(rules_text, (self.window_size[0] // 1.6,
+                                          self.window_size[1] // 1.5))
 
             # If the mouse is on the play button and is clicked, move to game
             # screen
             if (107 <= mouse_pos[0] <= 192) and (393 <= mouse_pos[1] <= 436):
                 play_text_highlight = render.render("Play", 1, self.brown)
                 self.screen.blit(play_text_highlight,
-                                 (self.window_size[0]//5.5,
-                                  self.window_size[1]//1.5))
+                                 (self.window_size[0] // 5.5,
+                                  self.window_size[1] // 1.5))
 
                 click = pygame.mouse.get_pressed()
-                if (click[0] == 1):
+                if click[0] == 1:
                     self.play()
 
             # If the mouse is on the rules button and is clicked, move to the
@@ -142,20 +134,78 @@ class Application:
             if (368 <= mouse_pos[0] <= 482) and (396 <= mouse_pos[1] <= 426):
                 rules_text_highlight = render.render("Rules", 1, self.brown)
                 self.screen.blit(rules_text_highlight,
-                                 (self.window_size[0]//1.6,
+                                 (self.window_size[0] // 1.6,
                                   self.window_size[1] // 1.5))
 
                 click = pygame.mouse.get_pressed()
-                if (click[0] == 1):
-                    # TODO: Implement a Rules Screen
-                    print("RULES TO COME")
+                if click[0] == 1:
+                    self.show_rules_screen()
+
+            pygame.display.update()
+            self.clock.tick(15)
+
+    def show_rules_screen(self):
+        """
+        Display the rules of the game to the user
+        """
+
+        show_rules = True
+
+        while show_rules:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+
+            self.screen.fill(self.green)
+
+            # --------------Create Rules Text and Back Text-------------
+
+            rules_render = pygame.font.Font('freesansbold.ttf', 24)
+            rules_label = rules_render.render("How to play Snake", 1,
+                                              self.white)
+            self.screen.blit(rules_label, (
+            self.window_size[0] // 3.2, self.window_size[1] // 7))
+
+            rule1_label = rules_render.render(
+                "1. Eat apples to grow your snake", 1, self.white)
+            self.screen.blit(rule1_label, (
+            self.window_size[0] // 5, self.window_size[1] // 3))
+
+            rule2_label = rules_render.render(
+                "2. Avoid hitting the edge of the grid", 1, self.white)
+            self.screen.blit(rule2_label, (
+            self.window_size[0] // 5, self.window_size[1] // 2))
+
+            rule3_label = rules_render.render(
+                "3. Try to get a score of 252 to win!", 1, self.white)
+            self.screen.blit(rule3_label, (self.window_size[0] // 5,
+                                           self.window_size[1] // 1.5))
+
+            mouse_pos = pygame.mouse.get_pos()
+            back_text = rules_render.render("Back", 1, self.white)
+            self.screen.blit(back_text, (self.window_size[0] // 2.2,
+                                         self.window_size[1] // 1.1))
+
+            # -----------------Back Click Functionality-------------------
+
+            if (269 <= mouse_pos[0] <= 321) and (537 <= mouse_pos[1] <= 555):
+                rules_text_highlight = rules_render.render("Back", 1,
+                                                           self.brown)
+                self.screen.blit(rules_text_highlight,
+                                 (self.window_size[0] // 2.2,
+                                  self.window_size[1] // 1.1))
+
+                click = pygame.mouse.get_pressed()
+                if click[0] == 1:
+                    self.show_title_screen()
 
             pygame.display.update()
             self.clock.tick(15)
 
     def display_score(self):
         """
-        When the game is over, show the final score of the player.
+        Whenthe game is over, show the final score of the player.
         """
         # TODO: Implement this method
 
@@ -168,11 +218,13 @@ class Application:
         for row in range(1, 17):
             for column in range(1, 17):
                 color = self.white
-                if type(self.grid.get_item(row-1, column-1)) == linked_list._Node:
+                if type(self.grid.get_item(row - 1,
+                                           column - 1)) == linked_list._Node:
                     color = self.green
-                rect = pygame.Rect(column * (self.grid_height + self.margin)-1,
-                                   row * (self.grid_width + self.margin),
-                                   self.grid_height, self.grid_width)
+                rect = pygame.Rect(
+                    column * (self.grid_height + self.margin) - 1,
+                    row * (self.grid_width + self.margin),
+                    self.grid_height, self.grid_width)
                 pygame.draw.rect(self.screen, color, rect)
         if self.food is None:
             food_pos = self.place_food()
@@ -256,12 +308,13 @@ class Application:
 
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_SPACE:
-                        self.__init__()   # relaunch game from the title screen
+                        self.__init__()  # relaunch game from the title screen
 
             self.screen.fill(self.green)
 
-            game_over_render = pygame.font.Font('freesansbold.ttf', 75)
+            # ------------ Draw labels for game over screen ----------------
 
+            game_over_render = pygame.font.Font('freesansbold.ttf', 75)
             game_over_label = game_over_render.render("Game Over!", 1,
                                                       self.white)
 
@@ -269,20 +322,18 @@ class Application:
                                                self.window_size[1] // 2.5))
 
             score_render = pygame.font.Font('freesansbold.ttf', 16)
-
             score_label = score_render.render("Final Score: " + str(self.score),
-                                              1,self.white)
+                                              1, self.white)
 
-            self.screen.blit(score_label, (self.window_size[0]//2.4,
-                                             self.window_size[1]//1.8))
+            self.screen.blit(score_label, (self.window_size[0] // 2.4,
+                                           self.window_size[1] // 1.8))
 
             restart_render = pygame.font.Font('freesansbold.ttf', 16)
-
             restart_label = restart_render.render("Press spacebar to restart",
                                                   1, self.white)
 
-            self.screen.blit(restart_label, (self.window_size[0]//2.9,
-                                             self.window_size[1]//1.6))
+            self.screen.blit(restart_label, (self.window_size[0] // 2.9,
+                                             self.window_size[1] // 1.6))
             pygame.display.update()
             self.clock.tick(15)
 
@@ -302,7 +353,8 @@ class Application:
                            row * (self.grid_width + self.margin),
                            self.grid_height, self.grid_width)
         pygame.draw.rect(self.screen, color, rect)
-        return row,col
+        return row, col
+
 
 # This main method is currently here to test out the GUI.
 # It can be removed once we finish anaconda.py
