@@ -73,8 +73,7 @@ class Application:
         self.green = (126, 200, 80)
         self.red = (255, 0, 0)
         self.brown = (181, 101, 29)
-        self.place_food()
-
+        self.food = None
         self.show_title_screen()
 
     def show_title_screen(self) -> None:
@@ -175,6 +174,17 @@ class Application:
                                    row * (self.grid_width + self.margin),
                                    self.grid_height, self.grid_width)
                 pygame.draw.rect(self.screen, color, rect)
+        if self.food is None:
+            food_pos = self.place_food()
+            self.food = food_pos
+        else:
+            column = self.food[1]
+            row = self.food[0]
+            color = self.red
+            rect = pygame.Rect(column * (self.grid_height + self.margin) - 1,
+                               row * (self.grid_width + self.margin),
+                               self.grid_height, self.grid_width)
+            pygame.draw.rect(self.screen, color, rect)
 
     def play(self) -> None:
         """
@@ -245,18 +255,23 @@ class Application:
 
         pygame.quit()
 
-    def place_food(self) -> None:
+    def place_food(self) -> Tuple[int, int]:
         """
         Place food randomly on the grid, not on the snke
         """
-        row = randint(1, 16)
-        col = randint(1, 16)
-        while(): # Need to update according to grid
-            color = self.red
-            rect = pygame.Rect(col * (self.grid_height + self.margin) - 1,
-                               row * (self.grid_width + self.margin),
-                               self.grid_height, self.grid_width)
-            pygame.draw.rect(self.screen, color, rect)
+        is_valid = False
+        row = None
+        col = None
+        while not is_valid:
+            row = randint(1, 15)
+            col = randint(1, 15)
+            is_valid = type(self.grid.get_item(row, col)) != linked_list._Node
+        color = self.red
+        rect = pygame.Rect(col * (self.grid_height + self.margin) - 1,
+                           row * (self.grid_width + self.margin),
+                           self.grid_height, self.grid_width)
+        pygame.draw.rect(self.screen, color, rect)
+        return row,col
 
 # This main method is currently here to test out the GUI.
 # It can be removed once we finish anaconda.py
