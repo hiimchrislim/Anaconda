@@ -1,5 +1,7 @@
 # Anaconda
 
+![sneaky boi](https://user-images.githubusercontent.com/24628243/70019571-b1f23500-1557-11ea-877e-cce48aafefbc.png)
+
 ## Table of contents 
 <a name="top"></a> 
 1. [Introduction](#introduction) 
