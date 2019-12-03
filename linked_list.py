@@ -30,9 +30,6 @@ class _Node:
     def isHead(self) -> bool:
         return self.isHead
 
-    def getItem(self):
-        return self.item
-
     def insert_item(self, item):
         self.item = item
 

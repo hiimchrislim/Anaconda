@@ -24,6 +24,11 @@ class Snake:
         # self.snake_body = linked_list.LinkedList([BODY_HEAD])
         self.dx = 1  # snake moves as soon as game starts
         self.dy = 0
+        # (dx > 0) = Moves right (index increases)
+        # (dx < 0) = Moves left (index decreases)
+        # (dy > 0) = Moves down the canvas (index increases)
+        # (dy < 0) = Moves up the canvas (index decreases)
+
 
     def get_snake_linked_list(self):
         return self.snake_linked_list
@@ -36,8 +41,8 @@ class Snake:
     def update(self):
         curr = self.snake_linked_list._first
         previous_coordinate = curr.item
-        new_coord_x = previous_coordinate[0] + self.dx
-        new_coord_y = previous_coordinate[1] + self.dy
+        new_coord_x = previous_coordinate[0] + self.dy
+        new_coord_y = previous_coordinate[1] + self.dx
         new_coord = (new_coord_x, new_coord_y)
         curr.insert_item(new_coord)
         curr = curr.next
