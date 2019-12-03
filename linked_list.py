@@ -67,7 +67,7 @@ class LinkedList:
         Raise IndexError if index > len(self) or index < 0.
         """
         # Create new node containing the item
-        new_node = _Node(item)
+        new_node = _Node(item, False)
 
         if index == 0:
             self._first, new_node.next = new_node, self._first

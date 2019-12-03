@@ -9,8 +9,6 @@ from random import randint
 import linked_list
 from grid import Grid
 
-# BODY_HEAD = pygame.Rect((132, 363, 32, 32))
-# BODY_PART = pygame.Rect((100, 363, 32, 32))
 
 class Application:
     """
@@ -260,7 +258,8 @@ class Application:
             self.screen.blit(label, (0, 1))
 
             # update game score
-            self.update_score()
+            if self.update_score():
+                self.grid.snake.grow()
             
 
             # Draw the borders of the grid
@@ -356,6 +355,14 @@ class Application:
 
         if self.food == self.get_snakehead_pos():
             self.score += 1
+            color = self.white
+            rect = pygame.Rect(self.food[1] * (self.grid_height + self.margin) - 1,
+                               self.food[0] * (self.grid_width + self.margin),
+                               self.grid_height, self.grid_width)
+            pygame.draw.rect(self.screen, color, rect)
+            self.food = self.place_food()
+            return True
+        return False
  
             
     

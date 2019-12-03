@@ -59,4 +59,17 @@ class Snake:
         """
         Grows the body of the snake whenever food is encountered
         """
-        # self.snake_body.insert(len(self.snake_body), BODY_PART)
+        curr = self.snake_linked_list._first
+        head_pos = curr.item
+        direction = self.get_snake_direction()
+        body = None
+        if direction[0] == 1:
+            body = (head_pos[0] + 1, head_pos[1])
+        elif direction[0] == -1:
+            body = (head_pos[0] - 1, head_pos[1])
+        elif direction[1] == -1:
+            body = (head_pos[0], head_pos[1] + 1)
+        else:
+            body = (head_pos[0], head_pos[1] - 1)
+        self.snake_linked_list.insert(0, body)
+        self.update()
