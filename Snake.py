@@ -72,4 +72,3 @@ class Snake:
         else:
             body = (head_pos[0], head_pos[1] - 1)
         self.snake_linked_list.insert(0, body)
-        self.update()

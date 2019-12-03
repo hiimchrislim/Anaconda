@@ -371,7 +371,7 @@ class Application:
         Return the x,y coordinates of the head of the snake
         """
         # ASK WHY y position of _first item is off 
-        fixed_coord = (self.grid.snake.get_snake_linked_list()._first.item[0],self.grid.snake.get_snake_linked_list()._first.item[1]+1)
+        fixed_coord = (self.grid.snake.get_snake_linked_list()._first.item[0] + 1,self.grid.snake.get_snake_linked_list()._first.item[1] + 1)
         return fixed_coord
 
 # This main method is currently here to test out the GUI.
