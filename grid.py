@@ -1,6 +1,4 @@
-"""
-Grid
-
+"""Grid
 === Module Description ===
 This module contains the implementation and the Grid
 """

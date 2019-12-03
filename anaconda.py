@@ -1,21 +1,15 @@
 """ The Anaconda: A Game
-
 === Module Description ===
 This module contains the implementation of the Anaconda Game.
 """
-
 from __future__ import annotations
 from grid import Grid
-from typing import Any, List, Optional, Tuple
 from linked_list import LinkedList, _Node
-import pygame
-
 
 class Anaconda:
     """
     Implementation of the Anaconda Game.
     """
-
     # === Private Attributes ===
     # _snake: A LinkedList representation of the snake
     # _grid: The grid of game

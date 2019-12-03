@@ -1,6 +1,4 @@
-"""
-The Anaconda: A Game
-
+"""The Anaconda: A Game
 === Module Description ===
 This module is responsible for displaying the UI of the game and running the
 overall anaconda game.
@@ -249,7 +247,7 @@ class Application:
                     quit()
                     game_over = True
 
-                if event.type == pygame.KEYUP:
+                if event.type == pygame.KEYUP: #player interaction
                     self.grid.move_snake(event)
 
             # Set the screen background

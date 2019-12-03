@@ -1,15 +1,12 @@
 """Linked List
-
 === Module Description ===
 This module contains the implementation and Linked List and _Node
 """
 from __future__ import annotations
 from typing import Any, List, Optional
 
-
 class _Node:
     """A node in a linked list.
-
     === Attributes ===
     item:
         The data in this node.
@@ -26,13 +23,11 @@ class _Node:
         self.next = None  # Initially pointing to nothing
         self.isHead = isHead
 
-
     def isHead(self) -> bool:
         return self.isHead
 
     def insert_item(self, item):
         self.item = item
-
 
 class LinkedList:
     """A linked list implementation of the List ADT.
