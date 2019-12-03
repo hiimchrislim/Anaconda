@@ -206,20 +206,6 @@ class Application:
                     pygame.quit()
                     quit()
                     game_over = True
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    # User clicks the mouse. Get the position
-                    pos = pygame.mouse.get_pos()
-                    # Convert mouse coordinates to array coordinates
-                    column = pos[0] // (self.grid_width + self.margin) - 1
-                    row = (pos[1] // (self.grid_height + self.margin)) - 1
-
-                    try:
-                        self.grid[row][column] = 1
-                    except IndexError:
-                        print("nope")
-                        pass
-
-                    print("Click ", pos, "Grid coordinates: ", row, column)
 
                 if event.type == pygame.KEYUP:
                     self.snake.move_snake(event)
@@ -253,7 +239,52 @@ class Application:
             # Go ahead and update the screen with what we've drawn.
             pygame.display.flip()
 
-        pygame.quit()
+        self.restart_game()
+        # pygame.quit()
+
+    def restart_game(self):
+        """ Restarts the game by taking the user back to the menu if they
+        press "spacebar"
+        """
+        restart = True
+
+        while restart:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+
+                if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_SPACE:
+                        self.__init__()   # relaunch game from the title screen
+
+            self.screen.fill(self.green)
+
+            game_over_render = pygame.font.Font('freesansbold.ttf', 75)
+
+            game_over_label = game_over_render.render("Game Over!", 1,
+                                                      self.white)
+
+            self.screen.blit(game_over_label, (self.window_size[0] // 7.6,
+                                               self.window_size[1] // 2.5))
+
+            score_render = pygame.font.Font('freesansbold.ttf', 16)
+
+            score_label = score_render.render("Final Score: " + str(self.score),
+                                              1,self.white)
+
+            self.screen.blit(score_label, (self.window_size[0]//2.4,
+                                             self.window_size[1]//1.8))
+
+            restart_render = pygame.font.Font('freesansbold.ttf', 16)
+
+            restart_label = restart_render.render("Press spacebar to restart",
+                                                  1, self.white)
+
+            self.screen.blit(restart_label, (self.window_size[0]//2.9,
+                                             self.window_size[1]//1.6))
+            pygame.display.update()
+            self.clock.tick(15)
 
     def place_food(self) -> Tuple[int, int]:
         """
@@ -276,6 +307,7 @@ class Application:
 # This main method is currently here to test out the GUI.
 # It can be removed once we finish anaconda.py
 
+
 if __name__ == "__main__":
     app = Application()
-    app.show_title_screen()
+    # app.show_title_screen()
