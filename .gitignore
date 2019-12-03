@@ -1,0 +1,6 @@
+# ignore git files
+.git
+
+
+.idea/
+__pycache__/
