@@ -16,20 +16,27 @@
 7. [License](#license)
 
 # Introducton <a name="introduction">
-  Welcome to our snake game!
+  Welcome to our snake game, Anaconda!
+     
+  This game will help you de-stress just in time for exam season.
+  Enjoy a new look for the timeless classic; snake.
+     
 # Gameplay <a name="gameplay">
   The rules:
-     Don't hit the walls.
-     Don't hit yourself.
-     Do eat the apple!
+     
+  Don't hit the walls.
+  
+  Don't hit yourself.
+  
+  Do eat the apple!
 ### Screenshots <a name="screenshots">
   
 ### Controls <a name="controls">
   Use the WASD keys to move:
-     w - up
-     a - left
-     s - down
-     d - right
+  + w - up
+  + a - left
+  + s - down
+  + d - right
 ### Features <a name="features">
   
 # Installation <a name="install">
