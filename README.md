@@ -45,6 +45,11 @@ Bhavik Kothari
 
 I contributed to the project by designing the skeleton of the main class — defining the methods to be implemented for running the place. Each team member got equal amount of work i.e we divided the methods evenly. Each member received 2 methods so that no one gets too much work. I contributed by implementing place_food method which places the food for the snake randomly on the grid whenver the snake eats the food. Whenver the food is eaten, the snake has to grow in length. To carry out this process, I implemented a grow method which increases the size of the snake whenever the food is eaten. Other than this I made sure to inform my team members about any bugs that I discovered while testing the code. Lastly, I helped my team members whenever they needed help in any way possible.
 
+Mark Epstein
+
+My contributions included the move method, refactoring the code, and general test cases. I was originally tasked with the grow method as well however most of my work was channeled into moving the snake. This process was more difficult than I initially expected because it had to be done in the middle of the project i.e. inserted into an already existing structure. In order to pick up the slack I was also tasked with updating this README file. 
+
+
 # License <a name="license">
 MIT License
 
