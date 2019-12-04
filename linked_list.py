@@ -5,6 +5,7 @@ This module contains the implementation and Linked List and _Node
 from __future__ import annotations
 from typing import Any, List, Optional
 
+
 class _Node:
     """A node in a linked list.
     === Attributes ===

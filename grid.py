@@ -6,6 +6,7 @@ from typing import List, Optional, Any
 from linked_list import _Node, LinkedList
 from Snake import Snake
 
+
 class Grid:
     """
     === Public Attributes ===
@@ -14,23 +15,19 @@ class Grid:
     """
     _grid = []
     snake = None
+
     def __init__(self, size: int):
         """Initialize the Grid with the given size"""
         self.size = size
         self._make_grid(self.size)
         self.game_over = False
 
-
     def get_size(self) -> int:
-        """
-        :return: The size of the grid
-        """
+        """Return the size of the grid"""
         return self.size
 
     def _make_grid(self, size) -> None:
-        """
-        Makes the gameboard grid of the game
-        """
+        """Makes the gameboard grid of the game"""
         for _ in range(size):
             col = []
             for _ in range(size):
@@ -42,7 +39,6 @@ class Grid:
         try:
             self._grid[row][col] = item
         except IndexError:
-            #print('Game Over')
             self.game_over = True
 
     def is_game_over(self):
@@ -74,9 +70,7 @@ class Grid:
         self.snake = Snake(LinkedList(initial_snake_body))
 
     def _make_fresh_grid(self, size) -> None:
-        """
-        Makes the gameboard grid of the game
-        """
+        """Makes the gameboard grid of the game"""
         lst = []
         for _ in range(size):
             col = []
@@ -85,13 +79,12 @@ class Grid:
             lst.append(col.copy())
         return lst
 
-    def clear_grid(self):
+    def clear_grid(self) -> None:
         self._grid = self._make_fresh_grid(16)
 
     def draw_new_snake(self):
         (dx, dy) = self.snake.get_snake_direction()
         self.snake = Snake(self.snake.get_snake_linked_list(), dx, dy)
-
         curr = self.snake.get_snake_linked_list()._first
         while curr is not None:
             coord_x = curr.item[0]
@@ -102,7 +95,6 @@ class Grid:
     def update_snake(self):
         self.snake.update()
         self.clear_grid()
-        #print(len(self.snake.get_snake_linked_list()))
         self.draw_new_snake()
 
     def move_snake(self, event):
