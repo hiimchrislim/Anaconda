@@ -26,14 +26,18 @@ class Snake:
     def get_snake_linked_list(self):
         return self.snake_linked_list
 
-    def move_snake(self, event):
-        if event.key == pygame.K_w:
+    def move_snake(self, event) -> None:
+        """Changes the direction of the snake by updating dx and dy.
+        Cannot reverse 180 degrees.
+        """
+        x, y = self.get_snake_direction()
+        if event.key == pygame.K_w and x != 0 and y != 1:
             self.dx, self.dy = 0, -1
-        elif event.key == pygame.K_a:
+        elif event.key == pygame.K_a and x != 1 and y != 0:
             self.dx, self.dy = -1, 0
-        elif event.key == pygame.K_s:
+        elif event.key == pygame.K_s and x != 0 and y != -1:
             self.dx, self.dy = 0, 1
-        elif event.key == pygame.K_d:
+        elif event.key == pygame.K_d and x != -1 and y != 0:
             self.dx, self.dy = 1, 0
         else:
             pass

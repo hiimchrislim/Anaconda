@@ -14,11 +14,11 @@ class Grid:
     """
     _grid = []
     snake = None
-    is_game_over = False
     def __init__(self, size: int):
         """Initialize the Grid with the given size"""
         self.size = size
         self._make_grid(self.size)
+        self.game_over = False
 
 
     def get_size(self) -> int:
@@ -42,11 +42,11 @@ class Grid:
         try:
             self._grid[row][col] = item
         except IndexError:
-            print('Game Over')
-            self.is_game_over = True
+            #print('Game Over')
+            self.game_over = True
 
     def is_game_over(self):
-        return self.is_game_over
+        return self.game_over
 
     def get_grid(self) -> List[List]:
         """

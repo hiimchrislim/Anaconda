@@ -9,7 +9,6 @@ from random import randint
 import linked_list
 from grid import Grid
 
-
 class Application:
     """
     === Attributes ===
@@ -231,14 +230,14 @@ class Application:
         # TODO: spawning food, growing snake, and incrementing score
         """
         game_over = False
-
         render = pygame.font.Font('freesansbold.ttf', 16)
-
         label = render.render("Score: " + str(self.score), 1, self.white)
 
         # -------- Main Program Loop -----------
         while not game_over:
-            # game_over = self.grid.is_game_over() # Fix this
+
+            game_over = self.grid.is_game_over() # Fix this
+
             for event in pygame.event.get():  # User did something
                 if event.type == pygame.QUIT:  # If user clicked close
                     pygame.quit()
@@ -260,7 +259,6 @@ class Application:
             # update game score
             if self.update_score():
                 self.grid.snake.grow()
-            
 
             # Draw the borders of the grid
             # The borders are not hardcoded, meaning you can move outside.
@@ -269,20 +267,12 @@ class Application:
             pygame.draw.line(self.screen, self.black, (31, 560), (560, 560), 4)
             pygame.draw.line(self.screen, self.black, (560, 560), (560, 31), 4)
 
-            # Move the snake
-            # TODO: The snake should move within the grid lines
-            #
-            # for i in range(len(self.snake.snake_body)):
-            #     self.snake.snake_body[i].x += self.snake.get_snake_direction()[0]
-            #     self.snake.snake_body[i].y += self.snake.get_snake_direction()[1]
-            #
-            # for j in range(len(self.snake.snake_body)):
-            #     pygame.draw.rect(self.screen, self.green, self.snake.snake_body[j])
             # Limit to 60 frames per second
             self.clock.tick(2)
 
             # Go ahead and update the screen with what we've drawn.
             pygame.display.flip()
+
 
         self.restart_game()
         # pygame.quit()
