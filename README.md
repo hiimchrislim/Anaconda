@@ -16,13 +16,20 @@
 7. [License](#license)
 
 # Introducton <a name="introduction">
-  
+  Welcome to our snake game!
 # Gameplay <a name="gameplay">
-  
+  The rules:
+     Don't hit the walls.
+     Don't hit yourself.
+     Do eat the apple!
 ### Screenshots <a name="screenshots">
   
 ### Controls <a name="controls">
-  
+  Use the WASD keys to move:
+     w - up
+     a - left
+     s - down
+     d - right
 ### Features <a name="features">
   
 # Installation <a name="install">
