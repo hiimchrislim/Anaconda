@@ -79,11 +79,14 @@ Dhaval Malhotra
 
 I contributed to the project by designing and writing the main GUI module (application.py). I implemented the title_screen(), play(), draw_grid(), and restart() method. The restart method restarts the game when it ends. In terms of the readme, I wrote the introduction for the game. Our group divided the work in even tasks, based on our project plan. We adhered to our project plan and took care of problems as they came up through effective communication. In terms of my contributions to the readme, I worked on writing the introduction
 
+Chris Lim
+
+My contributions to the project include creating the model of the game which would work alongside with the GUI as part of the MVC model. I hooked up the model to the GUI where the GUI would directly reflect the current state of the model (i.e. where the snake was located on the board). I also implemented the cascading effect of the snake such that the entire snake would move in unison as each body part would follow its preceding body part's position.  My contributions to the README file include implementing the basic layout (i.e The subheaders for each section on the readme) and adding the game screenshots.
 
 # License <a name="license">
 MIT License
 
-Copyright (c) ColdxBreaker
+Copyright (c) 2019 ColdxBreaker
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
