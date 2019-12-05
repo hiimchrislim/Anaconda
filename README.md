@@ -59,6 +59,14 @@
 ### Features <a name="features">
   
 # Installation <a name="install">
+  * Prerequisites
+    * First make you you have python installed. [get it here.](https://www.python.org/downloads/) 
+    * install pygame by typing in the console `pip install pygame`
+     
+  * Then you can download our game via the following link [Link to Anaconda's zip file here.](https://github.com/ColdxBreaker/Anaconda/archive/master.zip)
+    * unzip the file to your folder of choice.
+    * run the game by typing `python appplication.py` in the console
+     
   
 # Documentation <a name="documentation">
 
