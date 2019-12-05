@@ -204,11 +204,11 @@ class Application:
             self.grid.update_snake()
             self.draw_grid()
 
-            label = render.render("Score: " + str(self.score), 1, self.white)
-            self.screen.blit(label, (0, 1))
-            # update game score
+            # Update the length of the snake when it eats food and update the score
             if self.update_score():
                 self.grid.snake.grow()
+            label = render.render("Score: " + str(self.score), 1, self.white)
+            self.screen.blit(label, (0, 1))
             # Draw the borders of the grid
             # The borders are not hardcoded, meaning you can move outside.
             pygame.draw.line(self.screen, self.black, (31, 31), (560, 31), 4)
