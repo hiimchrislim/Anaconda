@@ -42,7 +42,14 @@
   
   Do eat the apple!
 ### Screenshots <a name="screenshots">
-  
+
+<img width="450" alt="Screen Shot 2019-12-04 at 8 02 41 PM" src="https://user-images.githubusercontent.com/24628243/70195416-9e6bd900-16d3-11ea-8f6a-f748d7d46c46.png">  
+<img width="450" alt="Screen Shot 2019-12-04 at 8 16 42 PM" src="https://user-images.githubusercontent.com/24628243/70195419-9e6bd900-16d3-11ea-8fd0-b1dc2fca8ee9.png">
+<img width="450" alt="Screen Shot 2019-12-04 at 8 19 16 PM" src="https://user-images.githubusercontent.com/24628243/70195418-9e6bd900-16d3-11ea-9f27-7e11ef27db84.png">
+<img width="450" alt="Screen Shot 2019-12-04 at 8 02 41 PM" src="https://user-images.githubusercontent.com/24628243/70195417-9e6bd900-16d3-11ea-885a-bf5bc89262aa.png">
+
+
+
 ### Controls <a name="controls">
   Use the WASD keys to move:
   + w - up
@@ -62,7 +69,7 @@ This project was created by Chris, Dhaval, Bhavik, Stanley and Mark
  
 Bhavik Kothari
 
-I contributed to the project by designing the skeleton of the main class — defining the methods to be implemented for running the place. Each team member got equal amount of work i.e we divided the methods evenly. Each member received 2 methods so that no one gets too much work. I contributed by implementing place_food method which places the food for the snake randomly on the grid whenver the snake eats the food. Whenver the food is eaten, the snake has to grow in length. To carry out this process, I implemented a grow method which increases the size of the snake whenever the food is eaten. Other than this I made sure to inform my team members about any bugs that I discovered while testing the code. Lastly, I helped my team members whenever they needed help in any way possible.
+I contributed to the project by designing the skeleton of the main class — defining the methods to be implemented for running the place. Each team member got equal amount of work i.e we divided the methods evenly. Each member received 2 methods so that no one gets too much work. I contributed by implementing place_food method which places the food for the snake randomly on the grid whenever the snake eats the food. Whenever the food is eaten, the snake has to grow in length. To carry out this process, I implemented a grow method which increases the size of the snake whenever the food is eaten. Other than this I made sure to inform my team members about any bugs that I discovered while testing the code. Lastly, I helped my team members whenever they needed help in any way possible.
 
 Mark Epstein
 

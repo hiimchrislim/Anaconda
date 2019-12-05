@@ -48,6 +48,8 @@ class Application:
         self.screen = pygame.display.set_mode(self.window_size)
         self.clock = pygame.time.Clock()
 
+        self.title_sprite = pygame.image.load('resources/title_graphic.png')
+
         self.grid = Grid(16)
         self.grid.draw_original_snake()
 
@@ -71,6 +73,8 @@ class Application:
                     pygame.quit()
                     quit()
             self.screen.fill(self.green)
+            # Draw snake image on title screen
+            self.screen.blit(self.title_sprite, (0, 180))
             # Create title text
             render = pygame.font.Font('freesansbold.ttf', 75)
             title = render.render("Anaconda ", 1, self.white)
@@ -199,7 +203,7 @@ class Application:
             self.screen.fill(self.green)
             self.grid.update_snake()
             self.draw_grid()
-            
+
             label = render.render("Score: " + str(self.score), 1, self.white)
             self.screen.blit(label, (0, 1))
             # update game score
