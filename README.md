@@ -20,6 +20,18 @@
      
   This game will help you de-stress just in time for exam season.
   Enjoy a new look for the timeless classic; snake.
+  
+  Our game, called Anaconda is a Python based implementation of the traditional snake game; made using the Pygame library.
+  
+  The game features a 16x16 grid for players to control a very hungry snake in and move around as they feel. As the game is 
+  running, apples will spawn randomly on the grid (coloured red).
+  
+  Eat as many apples as possible and try to get a total score of 252 points to win!
+  
+  **Note:** There are also easter eggs within the game for players to try and find! Don't ruin the surprise by looking at the code.
+  
+  
+     
      
 # Gameplay <a name="gameplay">
   The rules:
@@ -55,6 +67,10 @@ I contributed to the project by designing the skeleton of the main class — def
 Mark Epstein
 
 My contributions included the move method, refactoring the code, and general test cases. I was originally tasked with the grow method as well however most of my work was channeled into moving the snake. This process was more difficult than I initially expected because it had to be done in the middle of the project i.e. inserted into an already existing structure. In order to pick up the slack I was also tasked with updating this README file. 
+
+Dhaval Malhotra
+
+I contributed to the project by designing and writing the main GUI module (application.py). I implemented the title_screen(), play(), draw_grid(), and restart() method. The restart method restarts the game when it ends. In terms of the readme, I wrote the introduction for the game. Our group divided the work in even tasks, based on our project plan. We adhered to our project plan and took care of problems as they came up through effective communication. In terms of my contributions to the readme, I worked on writing the introduction
 
 
 # License <a name="license">
