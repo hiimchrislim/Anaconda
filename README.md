@@ -91,6 +91,9 @@ Chris Lim
 
 My contributions to the project include creating the model of the game which would work alongside with the GUI as part of the MVC model. I hooked up the model to the GUI where the GUI would directly reflect the current state of the model (i.e. where the snake was located on the board). I also implemented the cascading effect of the snake such that the entire snake would move in unison as each body part would follow its preceding body part's position.  My contributions to the README file include implementing the basic layout (i.e The subheaders for each section on the readme) and adding the game screenshots.
 
+Stanley Wan
+I contributed to the project by implementing the update score function, which updates the user's score when the snake eats additional units of food. I also tested our game and refactored the code to clean it up. For the readme, I contributed by creating installation instructions.
+
 # License <a name="license">
 MIT License
 
