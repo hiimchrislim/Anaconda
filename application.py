@@ -182,8 +182,6 @@ class Application:
     def play(self) -> None:
         """
         Main GUI Application Loop. Runs the game.
-        # TODO: This method still needs to implement the interactions with
-        # TODO: spawning food, growing snake, and incrementing score
         """
         game_over = False
         render = pygame.font.Font('freesansbold.ttf', 16)
@@ -201,7 +199,7 @@ class Application:
             self.screen.fill(self.green)
             self.grid.update_snake()
             self.draw_grid()
-            # temp soln
+            
             label = render.render("Score: " + str(self.score), 1, self.white)
             self.screen.blit(label, (0, 1))
             # update game score
@@ -290,15 +288,9 @@ class Application:
         """
         Return the x,y coordinates of the head of the snake
         """
-        # ASK WHY y position of _first item is off 
-        fixed_coord = (self.grid.snake.get_snake_linked_list()._first.item[0]
-                       + 1, self.grid.snake.get_snake_linked_list()._first.item[1] + 1)
+        fixed_coord = (self.grid.snake.get_snake_linked_list()._first.item[0] + 1,
+                       self.grid.snake.get_snake_linked_list()._first.item[1] + 1)
         return fixed_coord
-
-
-# This main method is currently here to test out the GUI.
-# It can be removed once we finish anaconda.py
 
 if __name__ == "__main__":
     app = Application()
-    # app.show_title_screen()
