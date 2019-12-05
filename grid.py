@@ -4,7 +4,7 @@ This module contains the implementation and the Grid
 """
 from typing import List, Optional, Any
 from linked_list import _Node, LinkedList
-from Snake import Snake
+from snake import Snake
 
 
 class Grid:
