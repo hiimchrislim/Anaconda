@@ -5,8 +5,6 @@ it will grow.
 """
 import pygame
 from typing import Tuple
-# BODY_HEAD = pygame.Rect((132, 363, 32, 32))
-# BODY_PART = pygame.Rect((100, 363, 32, 32))
 
 
 class Snake:
