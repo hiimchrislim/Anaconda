@@ -8,6 +8,7 @@ import pygame
 from random import randint
 import linked_list
 from grid import Grid
+import easter_eggs
 
 
 class Application:
@@ -189,6 +190,7 @@ class Application:
         """
         game_over = False
         render = pygame.font.Font('freesansbold.ttf', 16)
+        text = ""
         # -------- Main Program Loop -----------
         while not game_over:
             game_over = self.grid.is_game_over()  # Restart the game
@@ -199,6 +201,14 @@ class Application:
                     game_over = True
                 if event.type == pygame.KEYUP:  # Player interaction
                     self.grid.move_snake(event)
+
+                elif event.type == pygame.KEYDOWN:
+                    text += event.unicode  # store keyboard during game
+
+                    if "credits" in text:
+                        easter_eggs.CreditsEgg()
+                        text = ""
+
             # Set the screen background
             self.screen.fill(self.green)
             self.grid.update_snake()
