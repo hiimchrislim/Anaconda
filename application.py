@@ -127,9 +127,9 @@ class Application:
             self.screen.fill(self.green)
             # --------------Create Rules Text and Back Text-------------
             rules_render = pygame.font.Font('freesansbold.ttf', 24)
-            rules_label = rules_render.render("How to play Snake", 1, self.white)
+            rules_label = rules_render.render("How to play Anaconda", 1, self.white)
             self.screen.blit(rules_label, (
-                self.window_size[0] // 3.2, self.window_size[1] // 7))
+                self.window_size[0] // 3.4, self.window_size[1] // 7))
             rule1_label = rules_render.render(
                 "1. Eat apples to grow your snake", 1, self.white)
             self.screen.blit(rule1_label, (
