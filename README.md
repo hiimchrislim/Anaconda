@@ -15,24 +15,21 @@
 6. [Member Contributions](#membercontributions)
 7. [License](#license)
 
-# Introducton <a name="introduction">
+# Introduction <a name="introduction">
   Welcome to our snake game, Anaconda!
-     
-  This game will help you de-stress just in time for exam season.
+  
+  This game will help you de-stress just in time for the exam season. 
   Enjoy a new look for the timeless classic; snake.
   
   Our game, called Anaconda is a Python based implementation of the traditional snake game; made using the Pygame library.
   
-  The game features a 16x16 grid for players to control a very hungry snake in and move around as they feel. As the game is 
-  running, apples will spawn randomly on the grid (coloured red).
+  The game features a 16x16 grid for players to control a very hungry snake in and move around as they feel. The goal of this game is to   maneuver the snake around the grid and grow as large as possible by eating the target (apple). As the game is running, apples will
+  spawn randomly on the grid (coloured red).
   
   Eat as many apples as possible and try to get a total score of 252 points to win!
   
   **Note:** There are also easter eggs within the game for players to try and find! Don't ruin the surprise by looking at the code.
-  
-  
-     
-     
+ 
 # Gameplay <a name="gameplay">
   The rules:
      
@@ -48,8 +45,6 @@
 <img width="450" alt="Screen Shot 2019-12-04 at 8 19 16 PM" src="https://user-images.githubusercontent.com/24628243/70195418-9e6bd900-16d3-11ea-9f27-7e11ef27db84.png">
 <img width="450" alt="Screen Shot 2019-12-04 at 8 02 41 PM" src="https://user-images.githubusercontent.com/24628243/70195417-9e6bd900-16d3-11ea-885a-bf5bc89262aa.png">
 
-
-
 ### Controls <a name="controls">
   Use the WASD keys to move:
   + w - up
@@ -60,7 +55,7 @@
   
 # Installation <a name="install">
   * Prerequisites
-    * First make you you have python installed. [get it here.](https://www.python.org/downloads/) 
+    * First make you have python installed. [get it here.](https://www.python.org/downloads/) 
     * install pygame by typing in the console `pip install pygame`
      
   * Then you can download our game via the following link [Link to Anaconda's zip file here.](https://github.com/ColdxBreaker/Anaconda/archive/master.zip)
