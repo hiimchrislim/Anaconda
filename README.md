@@ -42,7 +42,14 @@
   
   Do eat the apple!
 ### Screenshots <a name="screenshots">
-  
+
+<img width="450" alt="Screen Shot 2019-12-04 at 8 02 41 PM" src="https://user-images.githubusercontent.com/24628243/70195416-9e6bd900-16d3-11ea-8f6a-f748d7d46c46.png">  
+<img width="450" alt="Screen Shot 2019-12-04 at 8 16 42 PM" src="https://user-images.githubusercontent.com/24628243/70195419-9e6bd900-16d3-11ea-8fd0-b1dc2fca8ee9.png">
+<img width="450" alt="Screen Shot 2019-12-04 at 8 19 16 PM" src="https://user-images.githubusercontent.com/24628243/70195418-9e6bd900-16d3-11ea-9f27-7e11ef27db84.png">
+<img width="450" alt="Screen Shot 2019-12-04 at 8 02 41 PM" src="https://user-images.githubusercontent.com/24628243/70195417-9e6bd900-16d3-11ea-885a-bf5bc89262aa.png">
+
+
+
 ### Controls <a name="controls">
   Use the WASD keys to move:
   + w - up
